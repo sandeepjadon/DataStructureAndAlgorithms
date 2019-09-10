@@ -98,7 +98,7 @@ main()
 	char infix[SIZE];
 	printf("Enter your Infix Expression:\n");
 	gets(infix);
-    InfixToPost(infix);
-    printf("Your Postfix Expression is:\n");
+	InfixToPost(infix);
+	printf("Your Postfix Expression is:\n");
 	puts(postfix); 	
 }
