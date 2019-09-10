@@ -22,9 +22,9 @@ Check(char c)
 {
 	if(c=='^')
 		Push(c);
-	else if(c=='*'||c=='/')
+	else if(c=='*'||c=='/'||c=='%')
 	{
-		if(stack[top]=='^'||stack[top]=='*'||stack[top]=='/'&&stack[top]!='(')
+		if(stack[top]=='^'||stack[top]=='*'||stack[top]=='/'||stack[top]=='%'&&stack[top]!='(')
 		{
 			while(top!=-1)
 	    	{
@@ -36,21 +36,6 @@ Check(char c)
 		}
 		else
 	    	Push(c);
-	}
-	else if(c=='%')
-	{
-		if(stack[top]!='+'||stack[top]!='-'&&stack[top]!='(')
-		{
-		while(top!=-1)
-		{
-			Pop();
-			if(stack[top]=='(')
-				break;
-		}	
-		Push(c);
-		}
-		else
-			Push(c);
 	}
 	else if(c=='+'||c=='-')
 	{
